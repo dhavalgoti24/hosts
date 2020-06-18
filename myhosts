@@ -29,6 +29,11 @@
 0.0.0.0 fjeqkpblfb.com
 0.0.0.0 i62e2b4mfy.com
 
+# Xiaomi
+
+0.0.0.0 data.mistat.india.xiaomi.com
+0.0.0.0 tracking.india.miui.com
+
 # TikTok
 
 0.0.0.0 p16-tiktokcdn-com.akamaized.net
