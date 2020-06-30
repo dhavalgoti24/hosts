@@ -3,7 +3,7 @@
 # This hosts file is a merged collection of hosts from reputable sources,
 # with a dash of crowd sourcing via GitHub
 #
-# Date: 29 June 2020 10:46:27 (GMT)
+# Date: 30 June 2020 15:50:02 (GMT)
 # Extensions added to this file: fakenews, gambling
 # Number of unique domains: 60,559
 #
@@ -27,8 +27,6 @@ ff02::1 ip6-allnodes
 ff02::2 ip6-allrouters
 ff02::3 ip6-allhosts
 0.0.0.0 0.0.0.0
-127.0.1.1 boxit
-127.0.0.53 boxit
 
 # Custom host records are listed here.
 
@@ -65,6 +63,8 @@ ff02::3 ip6-allhosts
 
 0.0.0.0 data.mistat.india.xiaomi.com
 0.0.0.0 tracking.india.miui.com
+0.0.0.0 api.device.xiaomi.net
+0.0.0.0 api.sec.miui.com
 
 # TikTok
 
