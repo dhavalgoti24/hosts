@@ -1293,6 +1293,7 @@ def flush_dns_cache():
 
         system_prefixes = ["/usr", ""]
         service_types = ["NetworkManager", "wicd", "dnsmasq", "networking"]
+        restarted_services = []
 
         for system_prefix in system_prefixes:
             systemctl = system_prefix + "/bin/systemctl"
@@ -1300,18 +1301,25 @@ def flush_dns_cache():
 
             for service_type in service_types:
                 service = service_type + ".service"
+                if service in restarted_services:
+                    continue
+
                 service_file = path_join_robust(system_dir, service)
                 service_msg = (
                     "Flushing the DNS cache by restarting " + service + " {result}"
                 )
 
                 if os.path.isfile(service_file):
+                    if 0 != subprocess.call([systemctl, "status", service],
+                                            stdout=subprocess.DEVNULL):
+                        continue
                     dns_cache_found = True
 
                     if subprocess.call(SUDO + [systemctl, "restart", service]):
                         print_failure(service_msg.format(result="failed"))
                     else:
                         print_success(service_msg.format(result="succeeded"))
+                    restarted_services.append(service)
 
         dns_clean_file = "/etc/init.d/dns-clean"
         dns_clean_msg = "Flushing the DNS cache via dns-clean executable {result}"
@@ -1461,7 +1469,7 @@ def maybe_copy_example_file(file_path):
             shutil.copyfile(example_file_path, file_path)
 
 
-def get_file_by_url(url):
+def get_file_by_url(url, retries=3, delay=10):
     """
     Get a file data located at a particular URL.
 
@@ -1482,12 +1490,19 @@ def get_file_by_url(url):
         format we have to encode or decode data before parsing it to UTF-8.
     """
 
-    try:
-        f = urlopen(url)
-        soup = BeautifulSoup(f.read(), "lxml").get_text()
-        return "\n".join(list(map(domain_to_idna, soup.split("\n"))))
-    except Exception:
-        print("Problem getting file: ", url)
+    while retries:
+        try:
+            with urlopen(url) as f:
+                soup = BeautifulSoup(f.read(), "lxml").get_text()
+                return "\n".join(list(map(domain_to_idna, soup.split("\n"))))
+        except Exception as e:
+            if 'failure in name resolution' in str(e):
+                print('No internet connection! Retrying in {} seconds'.format(delay))
+                time.sleep(delay)
+                retries -= 1
+                continue
+            break
+    print("Problem getting file: ", url)
 
 
 def write_data(f, data):

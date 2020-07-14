@@ -8,6 +8,7 @@
 import json
 import locale
 import os
+import platform
 import re
 import shutil
 import sys
@@ -62,6 +63,8 @@ class Base(unittest.TestCase):
 
     @property
     def sep(self):
+        if platform.system().lower() == "windows":
+            return "\\"
         return os.sep
 
     def assert_called_once(self, mock_method):
@@ -1122,12 +1125,13 @@ class TestUpdateReadmeData(BaseMockDir):
         )
         update_readme_data(self.readme_file, **kwargs)
 
+        if platform.system().lower() == "windows":
+            sep = "/"
+        else:
+            sep = self.sep
+
         expected = {
-            "base": {
-                "location": "foo" + self.sep,
-                "sourcesdata": "hosts",
-                "entries": 5,
-            },
+            "base": {"location": "foo" + sep, "sourcesdata": "hosts", "entries": 5},
             "foo": "bar",
         }
 
@@ -1144,8 +1148,13 @@ class TestUpdateReadmeData(BaseMockDir):
         )
         update_readme_data(self.readme_file, **kwargs)
 
+        if platform.system().lower() == "windows":
+            sep = "/"
+        else:
+            sep = self.sep
+
         expected = {
-            "base": {"location": "foo" + self.sep, "sourcesdata": "hosts", "entries": 5}
+            "base": {"location": "foo" + sep, "sourcesdata": "hosts", "entries": 5}
         }
 
         with open(self.readme_file, "r") as f:
@@ -1164,12 +1173,13 @@ class TestUpdateReadmeData(BaseMockDir):
         )
         update_readme_data(self.readme_file, **kwargs)
 
+        if platform.system().lower() == "windows":
+            sep = "/"
+        else:
+            sep = self.sep
+
         expected = {
-            "com-org": {
-                "location": "foo" + self.sep,
-                "sourcesdata": "hosts",
-                "entries": 5,
-            }
+            "com-org": {"location": "foo" + sep, "sourcesdata": "hosts", "entries": 5}
         }
 
         with open(self.readme_file, "r") as f:
@@ -1324,7 +1334,7 @@ class TestFlushDnsCache(BaseStdout):
                 self.assertIn(expected, output)
 
     @mock.patch("os.path.isfile", side_effect=[True, False, False, True] + [False] * 10)
-    @mock.patch("subprocess.call", side_effect=[1, 0])
+    @mock.patch("subprocess.call", side_effect=[1, 0, 0])
     def test_flush_posix_fail_then_succeed(self, *_):
         with self.mock_property("platform.system") as obj:
             obj.return_value = "Linux"
@@ -1617,14 +1627,14 @@ class GetFileByUrl(BaseStdout):
         url = b"www.google.com"
 
         expected = "www.google.com"
-        actual = get_file_by_url(url)
+        actual = get_file_by_url(url, delay=0)
 
         self.assertEqual(actual, expected)
 
     @mock.patch("updateHostsFile.urlopen", side_effect=mock_url_open_fail)
     def test_read_url_fail(self, _):
         url = b"www.google.com"
-        self.assertIsNone(get_file_by_url(url))
+        self.assertIsNone(get_file_by_url(url, delay=0))
 
         expected = "Problem getting file:"
         output = sys.stdout.getvalue()
@@ -1634,7 +1644,7 @@ class GetFileByUrl(BaseStdout):
     @mock.patch("updateHostsFile.urlopen", side_effect=mock_url_open_read_fail)
     def test_read_url_read_fail(self, _):
         url = b"www.google.com"
-        self.assertIsNone(get_file_by_url(url))
+        self.assertIsNone(get_file_by_url(url, delay=0))
 
         expected = "Problem getting file:"
         output = sys.stdout.getvalue()
@@ -1644,7 +1654,7 @@ class GetFileByUrl(BaseStdout):
     @mock.patch("updateHostsFile.urlopen", side_effect=mock_url_open_decode_fail)
     def test_read_url_decode_fail(self, _):
         url = b"www.google.com"
-        self.assertIsNone(get_file_by_url(url))
+        self.assertIsNone(get_file_by_url(url, delay=0))
 
         expected = "Problem getting file:"
         output = sys.stdout.getvalue()
