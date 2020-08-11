@@ -41,10 +41,34 @@
 0.0.0.0 syndication.twitter.com
 0.0.0.0 reliancecorporateitparkltd.sc.omtrdc.net
 
+# MiUi
+
+0.0.0.0 abroad.api.comm.intl.miui.com
+0.0.0.0 api.sec.miui.com
+0.0.0.0 global.api.huangye.miui.com
+0.0.0.0 logupdate.avlyun.sec.miui.com
+0.0.0.0 miuilog.yulorepages.com
+0.0.0.0 tracking.india.miui.com
+
 # Xiaomi
 
+0.0.0.0 api.ad.intl.xiaomi.com
+0.0.0.0 api.hybrid.intl.xiaomi.com
+0.0.0.0 app.chat.global.xiaomi.net
 0.0.0.0 data.mistat.india.xiaomi.com
-0.0.0.0 tracking.india.miui.com
+0.0.0.0 data.mistat.intl.xiaomi.com
+0.0.0.0 globalapi.ad.xiaomi.com
+0.0.0.0 global.market.xiaomi.com
+0.0.0.0 global.video.intl.xiaomi.com
+0.0.0.0 metok-ccc.intl.xiaomi.com
+0.0.0.0 resolver.msg.global.xiaomi.net
+0.0.0.0 sdkconfig.ad.india.xiaomi.com
+0.0.0.0 sdkconfig.ad.intl.xiaomi.com
+0.0.0.0 video.in.intl.xiaomi.com
+
+# Reddit
+
+0.0.0.0 stats.redditmedia.com
 
 # TikTok
 
