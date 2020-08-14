@@ -1,0 +1,98 @@
+# Custom host records are listed here.
+
+#Miscellaneous
+
+0.0.0.0 www.offerdeck.com
+0.0.0.0 m.offerdeck.com
+0.0.0.0 track.rockingtraffic.com
+0.0.0.0 main.realsrv.com
+0.0.0.0 www.rummycircle.com
+0.0.0.0 ads.linkshrink.net
+0.0.0.0 cdn2.contenabc.com
+0.0.0.0 config.mobile.yahoo.com
+0.0.0.0 constintptr.com
+0.0.0.0 greatene.com
+0.0.0.0 gusi11.com
+0.0.0.0 indian-sex-specialist.online
+0.0.0.0 j9j6l.top
+0.0.0.0 lerold.pro
+0.0.0.0 marketingfresh2018mobile.win
+0.0.0.0 mine-sub-new-techieonline.win
+0.0.0.0 nativeadmatch.com
+0.0.0.0 pop.bid
+0.0.0.0 soundwave.mobile.yahoo.com
+0.0.0.0 steepto.com
+0.0.0.0 uidesign.gbtcdn.com
+0.0.0.0 uod2quk646.com
+0.0.0.0 www.onclicksuper.com
+0.0.0.0 yes-no-click.online
+0.0.0.0 fjeqkpblfb.com
+0.0.0.0 i62e2b4mfy.com
+
+#Added on 8 July, 2020
+0.0.0.0 test.bulletprofit.com
+
+#Added on 9 July, 2020
+0.0.0.0 uprimp.com
+0.0.0.0 click.uprimp.com
+
+# Trackers
+
+0.0.0.0 syndication.twitter.com
+0.0.0.0 reliancecorporateitparkltd.sc.omtrdc.net
+
+# MiUi
+
+0.0.0.0 abroad.api.comm.intl.miui.com
+0.0.0.0 api.sec.miui.com
+0.0.0.0 global.api.huangye.miui.com
+0.0.0.0 logupdate.avlyun.sec.miui.com
+0.0.0.0 miuilog.yulorepages.com
+0.0.0.0 tracking.india.miui.com
+
+# Xiaomi
+
+0.0.0.0 api.ad.intl.xiaomi.com
+0.0.0.0 api.hybrid.intl.xiaomi.com
+0.0.0.0 app.chat.global.xiaomi.net
+0.0.0.0 data.mistat.india.xiaomi.com
+0.0.0.0 data.mistat.intl.xiaomi.com
+0.0.0.0 globalapi.ad.xiaomi.com
+0.0.0.0 global.market.xiaomi.com
+0.0.0.0 global.video.intl.xiaomi.com
+0.0.0.0 metok-ccc.intl.xiaomi.com
+0.0.0.0 resolver.msg.global.xiaomi.net
+0.0.0.0 sdkconfig.ad.india.xiaomi.com
+0.0.0.0 sdkconfig.ad.intl.xiaomi.com
+0.0.0.0 video.in.intl.xiaomi.com
+
+# Reddit
+
+0.0.0.0 stats.redditmedia.com
+
+# TikTok
+
+0.0.0.0 p16-tiktokcdn-com.akamaized.net
+0.0.0.0 tiktok.com
+0.0.0.0 tiktok.org
+0.0.0.0 tiktokcdn.com
+0.0.0.0 tiktokv.com
+0.0.0.0 muscdn.com
+0.0.0.0 musical.ly
+0.0.0.0 musically.ly
+0.0.0.0 v16-tiktokcdn-com.akamaized.net
+0.0.0.0 p16-tiktokcdn-com.akamaized.net
+0.0.0.0 v16-tiktokcdn-com.akamaized.net
+0.0.0.0 mon.byteoversea.com
+0.0.0.0 mon-va.byteoversea.com
+0.0.0.0 abtest-va-tiktok.byteoversea.com
+0.0.0.0 p16.hypstarcdn.com
+0.0.0.0 sf-tb-sg.ibytedtos.com
+0.0.0.0 xlog-va.byteoversea.com
+0.0.0.0 dm-maliva16.byteoversea.com
+0.0.0.0 dm.bytedance.com
+0.0.0.0 sgali3.l.byteoversea.net
+0.0.0.0 tiktokcdn-com.akamaized.net
+0.0.0.0 ibytedtos.com
+
+# End of custom host records.
