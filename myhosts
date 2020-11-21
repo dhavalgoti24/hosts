@@ -1,5 +1,6 @@
 # Custom host records are listed here.
 
+
 #Miscellaneous
 
 0.0.0.0 www.offerdeck.com
@@ -28,6 +29,11 @@
 0.0.0.0 yes-no-click.online
 0.0.0.0 fjeqkpblfb.com
 0.0.0.0 i62e2b4mfy.com
+
+#Oneplus
+
+0.0.0.0 http://1plus.io
+0.0.0.0 http://open.oneplus.net
 
 #Added on 8 July, 2020
 0.0.0.0 test.bulletprofit.com
