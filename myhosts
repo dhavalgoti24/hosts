@@ -32,8 +32,8 @@
 
 #Oneplus
 
-0.0.0.0 http://1plus.io
-0.0.0.0 http://open.oneplus.net
+0.0.0.0 1plus.io
+0.0.0.0 open.oneplus.net
 
 #Added on 8 July, 2020
 0.0.0.0 test.bulletprofit.com
