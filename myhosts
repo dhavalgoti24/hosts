@@ -30,6 +30,20 @@
 0.0.0.0 fjeqkpblfb.com
 0.0.0.0 i62e2b4mfy.com
 
+#Various ads and analytics domains
+
+0.0.0.0 freshmarketer.com
+0.0.0.0 cdn.luckyorange.com
+0.0.0.0 w1.luckyorange.com
+0.0.0.0 browser.sentry-cdn.com
+0.0.0.0 analytics.facebook.com
+0.0.0.0 analytics.pointdrive.linkedin.com
+0.0.0.0 widgets.pinterest.com
+0.0.0.0 extmaps-api.yandex.net
+0.0.0.0 in.appcenter.ms
+0.0.0.0 platform.twitter.com
+0.0.0.0 privatestats.whatsapp.net
+
 #Oneplus
 
 0.0.0.0 1plus.io
